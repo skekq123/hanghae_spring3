@@ -15,16 +15,16 @@ import javax.persistence.*;
 public class Restaurant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    Long id;
+    private Long id;
 
     @Column(nullable = false)
-    String name;
+    private String name;
 
     @Column(nullable = false)
-    Long minOrderPrice;
+    private Long minOrderPrice;
 
     @Column(nullable = false)
-    Long deliveryFee;
+    private Long deliveryFee;
 
     public Restaurant(RestaurantDto requestDto) {
 

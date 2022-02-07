@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 public class RestaurantDto {
-    String name;
-    Long minOrderPrice;
-    Long deliveryFee;
+    private String name;
+    private Long minOrderPrice;
+    private Long deliveryFee;
 }
