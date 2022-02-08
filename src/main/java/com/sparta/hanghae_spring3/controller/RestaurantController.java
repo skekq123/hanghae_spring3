@@ -1,7 +1,7 @@
 package com.sparta.hanghae_spring3.controller;
 
 import com.sparta.hanghae_spring3.dto.RestaurantDto;
-import com.sparta.hanghae_spring3.model.Restaurant;
+import com.sparta.hanghae_spring3.response.RestaurantResponse;
 import com.sparta.hanghae_spring3.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +22,12 @@ public class RestaurantController {
     }
 
     @PostMapping("/restaurant/register")
-    public Restaurant registerRestaurant(@RequestBody RestaurantDto request) {
+    public RestaurantResponse registerRestaurant(@RequestBody RestaurantDto request) {
         return restaurantService.registerRestaurant(request);
     }
 
     @GetMapping("/restaurants")
-    public List<Restaurant> getRestaurants() {
+    public List<RestaurantResponse> getRestaurants() {
         return restaurantService.getAllRestaurants();
     }
 }

@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,6 +17,7 @@ import javax.persistence.*;
 public class Restaurant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @Column(name = "restaurant_id")
     private Long id;
 
     @Column(nullable = false)
@@ -25,6 +28,9 @@ public class Restaurant {
 
     @Column(nullable = false)
     private Long deliveryFee;
+
+    @OneToMany(mappedBy = "restaurant")
+    List<Food> foods = new ArrayList<>();
 
     public Restaurant(RestaurantDto requestDto) {
 
