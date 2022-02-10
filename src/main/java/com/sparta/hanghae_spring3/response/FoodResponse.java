@@ -14,7 +14,6 @@ public class FoodResponse {
     Long id;
     String name;
     Long price;
-
     public FoodResponse(Food food) {
         this.id = food.getId();
         this.name = food.getName();

@@ -15,9 +15,11 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name="food")
 public class Food {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @Column(name="food_id")
     private Long id;
 
     @Column(nullable = false)
@@ -27,6 +29,7 @@ public class Food {
     private Long price;
 
     @ManyToOne
+    @JoinColumn(name="restaurant_id")
     private Restaurant restaurant;
 
     public Food(FoodDto request) {

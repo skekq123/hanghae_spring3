@@ -14,6 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table(name="restaurant")
 public class Restaurant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
@@ -30,7 +31,7 @@ public class Restaurant {
     private Long deliveryFee;
 
     @OneToMany(mappedBy = "restaurant")
-    List<Food> foods = new ArrayList<>();
+    private List<Food> foods = new ArrayList<>();
 
     public Restaurant(RestaurantDto requestDto) {
 
